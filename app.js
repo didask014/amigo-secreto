@@ -31,11 +31,13 @@ function borrarCajaInput(){
 
 function validarEntrada(){
     if (cajaEntrada = document.getElementById("amigo").value === ""){
-        return false;
+        return false;           // retorna falso si no hay texto en la caja                                                      
     } else {
-        return true;
+        return true;            // retorna verdadero si existe texto en la caja
     }
 }
+
+// Codigo de las listas
 
 function crearElementosLI (elemento){
     let nuevoLI = document.createElement("li");
@@ -58,5 +60,25 @@ function borrarAnteriorListaHTML (){
     listaAmigosHTML.innerHTML = "";
 }
 
+function generarNumeroAleatorio (){
+    let indice = Math.floor(Math.random() * amigos.length);
+    return indice;
+}
 
+function comprobarNulidadAmigos(){
+    if (amigos.length === 0){
+        return false;               // retorna falso si no hay elementos
+    }else {
+        return true;                // retorna verdadero si existen elementos
+    }
+}
 
+function obtenerNombreSorteado(){
+    return amigos[generarNumeroAleatorio()]    
+}
+
+function sortearAmigo() {
+    //if (comprobarNulidadAmigos()){
+
+    //}
+}
