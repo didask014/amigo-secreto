@@ -45,20 +45,22 @@ function crearElementosLI (elemento){
     return nuevoLI;
 }
 
-function addtoListaHTML(elemento){
-    listaAmigosHTML.appendChild(elemento);
+function addtoListaHTML(lista, elemento){
+    lista.appendChild(crearElementosLI(elemento));
 }
 
 function enlazarListas (){
-    borrarAnteriorListaHTML();
+    borrarAnteriorListaHTML(listaAmigosHTML);
     for (let i = 0; i < amigos.length; i++ ){
-        addtoListaHTML(crearElementosLI(amigos[i]));
+        addtoListaHTML(listaAmigosHTML ,amigos[i]);
     }
 }
 
-function borrarAnteriorListaHTML (){
-    listaAmigosHTML.innerHTML = "";
+function borrarAnteriorListaHTML (lista){
+    lista.innerHTML = "";
 }
+
+// Generación del nombre sorteado
 
 function generarNumeroAleatorio (){
     let indice = Math.floor(Math.random() * amigos.length);
